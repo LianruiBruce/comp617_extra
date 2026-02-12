@@ -273,10 +273,27 @@
 
   <main class="container">
 
+    <!-- Common Thread -->
+    <section id="common-thread" style="margin-bottom:2rem;">
+      <h2>Common Thread: Layers of Daily Experience</h2>
+      <blockquote style="border-left:4px solid var(--accent); padding:0.8rem 1.2rem; margin:1rem 0; background:var(--section-bg); border-radius:0 8px 8px 0; font-style:italic; color:var(--heading);">
+        <strong>Central Theme:</strong> How does my daily life manifest across different layers of experience&mdash;from observable behavior, to hidden cognition, to embodied physiology?
+      </blockquote>
+      <p>
+        The three visualizations in this assignment are designed as a sequential investigation, each peeling back a deeper layer of lived experience. Rather than treating time, attention, and physiology as independent topics, I approach them as interconnected dimensions of the same underlying question: <em>What does a day really look like when examined from the outside in?</em>
+      </p>
+      <p>
+        The data was collected in sequence&mdash;first behavioral, then cognitive, then physiological&mdash;so that the findings of each stage could inform the framing of the next.
+      </p>
+    </section>
+
+    <hr />
+
     <!-- Table of Contents -->
     <nav class="toc">
       <h3>Table of Contents</h3>
       <ol>
+        <li><a href="#common-thread">Common Thread: Layers of Daily Experience</a></li>
         <li><a href="#viz1">Visualization 1 &mdash; Daily Time Allocation as an Archipelago</a></li>
         <li><a href="#viz2">Visualization 2 &mdash; The Cognitive Waveform</a></li>
         <li><a href="#viz3">Visualization 3 &mdash; The Physiological Trinity</a></li>
@@ -380,6 +397,22 @@
         <ul>
           <li><strong>Rationale:</strong> Time is treated as physical volume. Sleep forms the base of each day, while work and maintenance activities compete vertically for space. The data is embedded in the structure rather than labeled explicitly.</li>
         </ul>
+
+        <h4 style="margin-top:1.5rem;">Interaction Design <span style="font-size:0.85rem; color:#666; font-weight:normal;">(Extra Credit)</span></h4>
+        <p>
+          Townscaper provides a fully interactive 3D environment where the viewer can freely rotate, zoom, and pan the camera in real time. This interaction is not merely navigational&mdash;it fundamentally changes the <em>type</em> of visualization being perceived.
+        </p>
+        <ul>
+          <li><strong>3D &rarr; 2D Transition:</strong> When the camera is positioned at a specific side angle, the three islands align into a row and their colored towers read as a conventional grouped bar chart. From this view, comparing daily time allocations across categories becomes straightforward.</li>
+          <li><strong>2D &rarr; 3D Transition:</strong> Rotating the camera to an oblique or top-down angle restores the &ldquo;city&rdquo; metaphor. The data is no longer read analytically but experienced spatially&mdash;each day feels like a distinct place with its own skyline, and the viewer perceives relative proportions through volume and density rather than aligned heights.</li>
+          <li><strong>Detail Exploration:</strong> Zooming into a single island reveals the stacking order and adjacency of color blocks, making it possible to see which activities are &ldquo;neighbors&rdquo; in the daily structure. This level of detail is invisible from the overview angle.</li>
+        </ul>
+        <p>
+          <strong>Function:</strong> The interaction allows the same underlying dataset to serve dual purposes: analytical comparison (bar chart mode) and holistic impression (city mode). The viewer chooses the interpretation mode through physical gesture (camera rotation), making the act of reading the data an embodied, exploratory process.
+        </p>
+        <p>
+          <strong>Influence on Perception:</strong> Without interaction, I would have had to choose one static view&mdash;either the analytical bar chart or the experiential cityscape. Being able to switch freely made me realize that my perception of &ldquo;balance&rdquo; depended on the viewing angle. The bar chart view emphasized numerical similarity across days, while the city view highlighted qualitative differences in composition and texture. Interaction revealed that a single dataset can support multiple, sometimes contradictory, narratives depending on how it is approached.
+        </p>
       </div>
 
       <div class="section-card">
@@ -651,6 +684,33 @@
           Compared to the fully manual media used in the first two visualizations, incorporating AI in the third required a higher degree of verification and methodological transparency, reinforcing my awareness of authorship and data integrity.
         </p>
       </div>
+
+      <div class="section-card">
+        <h3>Common Thread: How the Questions Build on One Another</h3>
+        <p>The three research questions were asked in sequence, and each was directly shaped by the findings of the previous one.</p>
+        <p>
+          <strong>Q1 &rarr; Q2:</strong> The time allocation visualization (Archipelago) revealed that my daily structure is remarkably stable across days&mdash;similar hours devoted to similar categories. But this very stability raised a new question: <em>if the external structure looks the same, does the internal experience also remain the same?</em> This led me to investigate cognitive focus, shifting the lens from what I do to how well I do it.
+        </p>
+        <p>
+          <strong>Q2 &rarr; Q3:</strong> The cognitive waveform revealed that identical-looking time blocks can contain vastly different attention profiles&mdash;smooth flow, fragmented noise, or forced intensity. This made me wonder whether the body carries its own distinct &ldquo;signature&rdquo; for different activity types. If attention can vary independently of time structure, <em>does physiology also tell a different story from either time or cognition?</em> This motivated the physiological investigation, extending the inquiry from mind to body.
+        </p>
+        <p>
+          <strong>Overall Progression:</strong> The sequence moves from <strong>external observation (behavior) &rarr; internal state (cognition) &rarr; embodied response (physiology)</strong>, with each layer revealing variance that was invisible at the previous level. Time structure appears stable; attention reveals hidden turbulence within that stability; physiology exposes how the body accumulates strain in patterns that neither time nor attention alone can predict. Together, the three layers demonstrate that understanding daily life requires looking beyond any single dimension of measurement.
+        </p>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- ==================== Portfolio ==================== -->
+    <section id="portfolio" style="text-align:center; margin:2rem 0;">
+      <h2 style="display:inline-block;">Portfolio</h2>
+      <p>This assignment has been published as a web-compatible portfolio entry and is publicly accessible at:</p>
+      <p>
+        <a href="https://lianruibruce.github.io/comp617_extra/" target="_blank" rel="noopener" style="font-size:1.1rem; font-weight:600;">
+          https://lianruibruce.github.io/comp617_extra/
+        </a>
+      </p>
     </section>
 
   </main>
