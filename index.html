@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 1: Data Physicalization Assignment</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a2e;
+      --heading: #16213e;
+      --accent: #0f3460;
+      --border: #e0e0e0;
+      --code-bg: #f6f8fa;
+      --table-head: #f0f4f8;
+      --table-stripe: #fafbfc;
+      --link: #0366d6;
+      --shadow: rgba(0, 0, 0, 0.06);
+      --section-bg: #f9fafb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* ---- Header / Hero ---- */
+    .hero {
+      background: linear-gradient(135deg, #0f3460 0%, #16213e 60%, #1a1a2e 100%);
+      color: #fff;
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero .student {
+      font-size: 1.15rem;
+      opacity: 0.85;
+      font-weight: 400;
+    }
+
+    /* ---- Layout ---- */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    /* ---- Typography ---- */
+    h2 {
+      font-size: 1.7rem;
+      color: var(--heading);
+      margin: 3rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 3px solid var(--accent);
+      display: inline-block;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      color: var(--accent);
+      margin: 2rem 0 0.6rem;
+    }
+
+    p, li {
+      margin-bottom: 0.75rem;
+    }
+
+    strong {
+      color: var(--heading);
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ---- Section Cards ---- */
+    .section-card {
+      background: var(--section-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem 2rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 2px 8px var(--shadow);
+    }
+
+    .section-card h3:first-child {
+      margin-top: 0;
+    }
+
+    /* ---- Images ---- */
+    .img-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .img-group figure {
+      flex: 1 1 280px;
+      margin: 0;
+      text-align: center;
+    }
+
+    .img-group img, .single-img img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 10px var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .img-group img:hover, .single-img img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    .single-img {
+      text-align: center;
+      margin: 1rem 0 1.5rem;
+    }
+
+    figcaption {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 0.4rem;
+    }
+
+    /* ---- Tables ---- */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    thead th {
+      background: var(--table-head);
+      text-align: left;
+      padding: 0.65rem 1rem;
+      font-weight: 600;
+      border-bottom: 2px solid var(--border);
+    }
+
+    tbody td {
+      padding: 0.55rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tbody tr:nth-child(even) {
+      background: var(--table-stripe);
+    }
+
+    /* Color swatches in tables */
+    .swatch {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      vertical-align: middle;
+      margin-right: 6px;
+      border: 1px solid rgba(0,0,0,0.15);
+    }
+
+    /* ---- Equation ---- */
+    .equation {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.8rem 1.2rem;
+      font-family: "Courier New", Courier, monospace;
+      text-align: center;
+      margin: 1rem 0;
+      font-size: 1rem;
+    }
+
+    /* ---- Final Synthesis ---- */
+    .synthesis-box {
+      background: linear-gradient(135deg, #f0f4f8 0%, #e8eef5 100%);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 1.5rem 2rem;
+      margin: 1.5rem 0;
+    }
+
+    /* ---- Table of Contents ---- */
+    .toc {
+      background: var(--section-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem 1.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .toc h3 {
+      margin: 0 0 0.5rem;
+      color: var(--heading);
+      font-size: 1.1rem;
+    }
+
+    .toc ol {
+      padding-left: 1.4rem;
+      margin: 0;
+    }
+
+    .toc li {
+      margin-bottom: 0.3rem;
+    }
+
+    /* ---- Footer ---- */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.85rem;
+      color: #999;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 640px) {
+      .hero { padding: 2.5rem 1.2rem 2rem; }
+      .hero h1 { font-size: 1.6rem; }
+      .container { padding: 1.5rem 1rem 3rem; }
+      h2 { font-size: 1.35rem; }
+      .section-card { padding: 1.2rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1>Module 1: Data Physicalization Assignment</h1>
+    <p class="student"><strong>Student Name:</strong> Lianrui Geng</p>
+  </header>
+
+  <main class="container">
+
+    <!-- Table of Contents -->
+    <nav class="toc">
+      <h3>Table of Contents</h3>
+      <ol>
+        <li><a href="#viz1">Visualization 1 &mdash; Daily Time Allocation as an Archipelago</a></li>
+        <li><a href="#viz2">Visualization 2 &mdash; The Cognitive Waveform</a></li>
+        <li><a href="#viz3">Visualization 3 &mdash; The Physiological Trinity</a></li>
+        <li><a href="#synthesis">Final Synthesis</a></li>
+      </ol>
+    </nav>
+
+    <!-- ==================== Visualization 1 ==================== -->
+    <section id="viz1">
+      <h2>Visualization 1: Daily Time Allocation as an Archipelago</h2>
+
+      <div class="section-card">
+        <h3>1. Research Question</h3>
+        <p>
+          <strong>How is my daily time distributed across different activities, and how does this structure change from day to day?</strong>
+        </p>
+        <p>
+          This question focuses on understanding how my everyday life is divided between work, rest, and maintenance, and whether my daily structure remains stable or varies across days.
+        </p>
+      </div>
+
+      <div class="section-card">
+        <h3>2. Data Collection</h3>
+        <ul>
+          <li><strong>Method:</strong> Manual logging in a physical notebook at the end of each day (Day 1&ndash;Day 3).</li>
+          <li><strong>Metric:</strong> Time spent per activity, recorded in hours and rounded.</li>
+          <li><strong>Process:</strong> I intentionally avoided digital tracking tools. Logging by hand helped me reflect on my day rather than optimize or correct it. I also assigned colors to activities during logging to prepare for physical construction. I recorded the data each night at approximately 11:30 PM before sleeping, to ensure minimal recall delay and reduce retrospective distortion.</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h3>3. Visualization Images</h3>
+
+        <p><strong>(A) Isometric Overview (3D City View)</strong><br />
+          Shows each day as an island and activities as colored towers forming a small town.</p>
+        <div class="img-group">
+          <figure>
+            <img src="images/Townscaper%202026-01-26%2014-41-21.png" alt="Overview" loading="lazy" />
+            <figcaption>Overview 1</figcaption>
+          </figure>
+          <figure>
+            <img src="images/Townscaper%202026-01-26%2014-43-56.png" alt="Overview 2" loading="lazy" />
+            <figcaption>Overview 2</figcaption>
+          </figure>
+          <figure>
+            <img src="images/Townscaper%202026-01-26%2014-40-27.png" alt="Overview 3" loading="lazy" />
+            <figcaption>Overview 3</figcaption>
+          </figure>
+        </div>
+
+        <p><strong>(B) Side View (2D Bar-Chart-Like View)</strong><br />
+          From two different angles, tower heights align visually and can be read similarly to a bar chart.</p>
+        <div class="img-group">
+          <figure>
+            <img src="images/Townscaper%202026-01-26%2014-40-20.png" alt="Side View 1" loading="lazy" />
+            <figcaption>Side View 1</figcaption>
+          </figure>
+          <figure>
+            <img src="images/Townscaper%202026-01-26%2014-40-48.png" alt="Side View 2" loading="lazy" />
+            <figcaption>Side View 2</figcaption>
+          </figure>
+        </div>
+
+        <p><strong>(C) Detail View</strong><br />
+          Show details about the town. We can&rsquo;t know the data structure if we are inside the town.</p>
+        <div class="single-img">
+          <img src="images/Townscaper%202026-01-26%2014-48-48.png" alt="Detail View" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h3>4. Process &amp; Design Rationale</h3>
+        <ul>
+          <li><strong>Medium:</strong> <em>Townscaper</em>. I chose this game because I had played it before and found that building a town with different colors was an intuitive and interesting way to represent different activities. The game is simple to use and easy to modify, which made it suitable for manual data construction.</li>
+          <li><strong>3D Structure:</strong> The visualization exists as a fully three-dimensional scene. By rotating the camera to a specific angle, the city can be read as a two-dimensional bar chart. Rotating to other angles turns it back into a 3D town. This shift between 3D and 2D is intentional and central to the design.</li>
+          <li><strong>Mapping Rules:</strong>
+            <ul>
+              <li><strong>Islands:</strong> One island represents one day.</li>
+              <li><strong>Height:</strong> One vertical block represents approximately one hour.</li>
+              <li><strong>Color Mapping:</strong></li>
+            </ul>
+          </li>
+        </ul>
+
+        <table>
+          <thead>
+            <tr><th>Activity</th><th>Color</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Sleep</td><td><span class="swatch" style="background:#1a237e"></span>Dark Blue</td></tr>
+            <tr><td>Research</td><td><span class="swatch" style="background:#d32f2f"></span>Red</td></tr>
+            <tr><td>Homework</td><td><span class="swatch" style="background:#ef6c00"></span>Orange</td></tr>
+            <tr><td>Reading</td><td><span class="swatch" style="background:#fbc02d"></span>Yellow</td></tr>
+            <tr><td>Social / Chat</td><td><span class="swatch" style="background:#f5f5f5"></span>White</td></tr>
+            <tr><td>Eating / Cooking</td><td><span class="swatch" style="background:#00897b"></span>Teal</td></tr>
+            <tr><td>Shopping</td><td><span class="swatch" style="background:#9e9e9e"></span>Grey</td></tr>
+            <tr><td>Gaming</td><td><span class="swatch" style="background:#388e3c"></span>Green</td></tr>
+          </tbody>
+        </table>
+
+        <ul>
+          <li><strong>Rationale:</strong> Time is treated as physical volume. Sleep forms the base of each day, while work and maintenance activities compete vertically for space. The data is embedded in the structure rather than labeled explicitly.</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h3>5. Synthesis of Findings</h3>
+        <ul>
+          <li>The visualization shows that my daily life is generally <strong>work-life balanced</strong>, which aligns with how I perceive my routine.</li>
+          <li>Because one of the days falls on a weekend, research time drops sharply on that island, making the contrast between days very clear.</li>
+          <li>Viewing the city from different angles made it easier to notice that each day has a distinct structure, even when the total time feels similar.</li>
+          <li>Overall, the result matched my expectations, though it also made me realize that research time could be increased relative to other activities.</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- ==================== Visualization 2 ==================== -->
+    <section id="viz2">
+      <h2>Visualization 2: The Cognitive Waveform</h2>
+
+      <div class="section-card">
+        <h3>1. Research Question</h3>
+        <p>
+          <strong>How does the intensity of my cognitive focus fluctuate throughout the workday, and does the &ldquo;shape&rdquo; of my attention span differ between a standard day, a fragmented day, and a deadline day?</strong>
+        </p>
+        <p>
+          While the first visualization looked at <em>what</em> I did, this question investigates <em>how well</em> I did it. I wanted to treat my attention span not as a simple resource, but as a fluctuating signal&mdash;to see if &ldquo;flow state&rdquo; has a visible pattern.
+        </p>
+      </div>
+
+      <div class="section-card">
+        <h3>2. Data Collection</h3>
+        <ul>
+          <li><strong>Method:</strong> Subjective self-assessment recorded in a pocket notebook.</li>
+          <li><strong>Metric:</strong> &ldquo;Focus Score&rdquo; on a scale of 1&ndash;10 (1 = Distracted/Tired, 10 = Deep Flow).</li>
+          <li><strong>Frequency:</strong> Every 30 minutes from 10:00 AM to 5:30 PM over three days.</li>
+          <li><strong>Process:</strong> To avoid the &ldquo;Observer Effect&rdquo; (where using a digital tool distracts me), I set a silent vibration alarm on my watch. When it buzzed, I scribbled a number. I also added brief qualitative notes (e.g., &ldquo;coffee kick-in&rdquo;, &ldquo;interrupted by chat&rdquo;) to explain shifts in the score.</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h3>3. Visualization Images</h3>
+        <p><strong>(A) The Waveform Overview</strong><br />
+          A hand-drawn &ldquo;spectrogram&rdquo; representing three days of attention.</p>
+        <div class="single-img">
+          <img src="images/attention.jpg" alt="Attention Waveform" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h3>4. Process &amp; Design Rationale</h3>
+        <ul>
+          <li><strong>Medium:</strong> Analog Drawing (Markers &amp; Pen on Paper). After using a digital 3D tool for the first visualization, I chose 2D hand-drawing to emphasize the &ldquo;organic&rdquo; and &ldquo;imperfect&rdquo; nature of human attention. The slight bleed of the markers on paper captures the fuzziness of focus better than crisp digital pixels.</li>
+          <li><strong>Technique:</strong> Mirrored Bar Chart / Audio Waveform. I visualized attention as an audio signal. A low focus score creates a thin, weak line (static noise), while a high focus score creates a thick, high-amplitude block (strong signal).</li>
+          <li><strong>Mapping Rules:</strong>
+            <ul>
+              <li><strong>X-Axis:</strong> Time (Linear, 10:00 AM &ndash; 5:30 PM).</li>
+              <li><strong>Y-Axis (Amplitude):</strong> The height of the bar corresponds to the Focus Score (mirrored up and down for symmetry).</li>
+              <li><strong>Color (Heatmap):</strong></li>
+            </ul>
+          </li>
+        </ul>
+
+        <table>
+          <thead>
+            <tr><th>Focus Level</th><th>Color</th><th>Meaning</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1&ndash;4</td><td><span class="swatch" style="background:#ef6c00"></span>Red / Orange</td><td>Low Focus &ndash; &ldquo;Noise&rdquo;</td></tr>
+            <tr><td>5&ndash;6</td><td><span class="swatch" style="background:#388e3c"></span>Green</td><td>Normal Work &ndash; &ldquo;Base Signal&rdquo;</td></tr>
+            <tr><td>7&ndash;8</td><td><span class="swatch" style="background:#6a1b9a"></span>Purple / Brown</td><td>Deep Work &ndash; &ldquo;High Frequency&rdquo;</td></tr>
+            <tr><td>9&ndash;10</td><td><span class="swatch" style="background:#1565c0"></span>Blue</td><td>Flow State &ndash; &ldquo;Peak Resonance&rdquo;</td></tr>
+          </tbody>
+        </table>
+
+        <ul>
+          <li><strong>Rationale:</strong> By mirroring the bars, the chart creates &ldquo;shapes&rdquo; or &ldquo;blobs&rdquo; of time. This allows me to see the <em>momentum</em> of my focus&mdash;how long it takes to ramp up to a blue state and how quickly it crashes to red.</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <h3>5. Synthesis of Findings</h3>
+        <p>The &ldquo;shape&rdquo; of the waveforms revealed three distinct archetypes of workdays that I wasn&rsquo;t previously aware of:</p>
+        <ul>
+          <li><strong>Day 1 (The &ldquo;Symmetrical&rdquo; Day):</strong> The waveform shows a smooth curve. I had a slow start (red/orange), a massive, sustained block of &ldquo;Flow State&rdquo; (Blue/Brown) in the middle, and a gentle taper off. This visualizes an ideal day where momentum is preserved.</li>
+          <li><strong>Day 2 (The &ldquo;Fragmented&rdquo; Day):</strong> The waveform looks like static noise. It is jagged with frequent dips into red/orange in the middle of the day. This corresponds to a day interrupted by meetings and chats. The visual &ldquo;gaps&rdquo; show how hard it is to build a &ldquo;Purple/Blue&rdquo; tower when the signal is constantly cut.</li>
+          <li><strong>Day 3 (The &ldquo;Deadline&rdquo; Day):</strong> The shape is blocky and unnatural. There is a sudden jump from low focus to extreme high focus (Blue), creating a solid &ldquo;brick&rdquo; of intensity. This represents &ldquo;forced focus&rdquo; due to a deadline. While productive, the abrupt red drop-off at the end shows the immediate burnout that followed.</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- ==================== Visualization 3 ==================== -->
+    <section id="viz3">
+      <h2>Visualization 3: The Physiological Trinity</h2>
+
+      <div class="section-card">
+        <h3>1. Research Question</h3>
+        <p>
+          <strong>How does the physiological load of my body differ across different types of physical activity, and can multi-dimensional biological signals reveal patterns not visible through step counts alone?</strong>
+        </p>
+        <p>
+          While the first visualization examined <em>how I allocate time</em> and the second explored <em>how I experience attention</em>, this third visualization investigates <em>how my body responds physiologically</em> to different forms of activity. Instead of focusing on volume alone (e.g., steps), I examine metabolic intensity, oxygen stress, and exercise duration simultaneously.
+        </p>
+      </div>
+
+      <div class="section-card">
+        <h3>2. Data Collection</h3>
+        <ul>
+          <li><strong>Source:</strong> Apple Health (Feb 5&ndash;7)</li>
+          <li><strong>Metrics Extracted:</strong>
+            <ul>
+              <li>Active Calories (kcal)</li>
+              <li>Exercise Minutes (min)</li>
+              <li>Minimum Blood Oxygen (SpO&#8322;)</li>
+              <li>Step Count (reference only)</li>
+            </ul>
+          </li>
+          <li><strong>Context:</strong>
+            <ul>
+              <li>Feb 5: Gym workout</li>
+              <li>Feb 6: Light gym session</li>
+              <li>Feb 7: Basketball game (highest step count)</li>
+            </ul>
+          </li>
+          <li><strong>Extraction Process:</strong> After each day of activity, I accessed Apple Health&rsquo;s summary view and manually transcribed the relevant metrics into my notebook. I recorded the values the same evening to minimize memory distortion. All derived calculations (intensity, oxygen stress) were computed manually, and the results were cross-checked against raw Apple Health entries to ensure accuracy.</li>
+        </ul>
+
+        <p><strong>Derived Metrics:</strong></p>
+        <table>
+          <thead>
+            <tr><th>Dimension</th><th>Formula</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Metabolic Intensity</td><td>Active Calories &divide; Exercise Minutes (kcal/min)</td></tr>
+            <tr><td>Exercise Duration</td><td>Exercise Minutes</td></tr>
+            <tr><td>Oxygen Stress</td><td>100 &minus; Minimum SpO&#8322;</td></tr>
+          </tbody>
+        </table>
+
+        <p>To ensure comparability across dimensions, I applied <strong>Min&ndash;Max normalization</strong>:</p>
+        <div class="equation">
+          x<sub>norm</sub> = (x &minus; min(X)) / (max(X) &minus; min(X))
+        </div>
+        <p>This allows the radar plot to represent relative physiological deviation rather than raw magnitude.</p>
+      </div>
+
+      <div class="section-card">
+        <h3>3. Visualization Image</h3>
+        <p><strong>(A) Normalized Radar Plot &ndash; Physiological Trinity</strong></p>
+        <div class="single-img">
+          <img src="images/v3.png" alt="Physiological Radar" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h3>4. Process &amp; Design Rationale</h3>
+        <ul>
+          <li><strong>Medium:</strong> AI-assisted Digital Rendering (Google &ldquo;Banana&rdquo; generation tool). This visualization intentionally incorporates AI as a rendering assistant rather than an automated charting template. I manually extracted the raw physiological metrics, computed derived values, and applied Min&ndash;Max normalization before using the AI tool. The normalized values and axis structure were explicitly specified in the prompt. After generation, I verified that all numeric values matched my manually calculated data. The AI tool therefore functioned strictly as a visualization renderer, not as a data analysis or automatic charting system.</li>
+          <li><strong>Structure:</strong> A triangular physiological footprint composed of three axes:
+            <ol>
+              <li>Metabolic Intensity (effort per minute)</li>
+              <li>Exercise Duration (total sustained activity)</li>
+              <li>Oxygen Stress (physiological depletion)</li>
+            </ol>
+          </li>
+          <li><strong>Mapping Rules:</strong>
+            <ul>
+              <li>All axes are normalized to [0, 1].</li>
+              <li>Larger area represents greater physiological load (not necessarily better performance).</li>
+              <li>Each day forms a distinct geometric &ldquo;signature.&rdquo;</li>
+            </ul>
+          </li>
+          <li><strong>Design Logic:</strong>
+            <ul>
+              <li>The radar format emphasizes interdependence between variables.</li>
+              <li>A single metric (e.g., steps) cannot capture metabolic cost or oxygen demand.</li>
+              <li>The triangle shape visually encodes how intensity, duration, and oxygen consumption co-vary.</li>
+            </ul>
+          </li>
+        </ul>
+        <p>This visualization treats the body as a dynamic system rather than a simple counter of activity volume.</p>
+      </div>
+
+      <div class="section-card">
+        <h3>5. Synthesis of Findings</h3>
+        <p>The three days reveal distinct physiological archetypes:</p>
+        <ul>
+          <li><strong>Feb 5 &ndash; Moderate Duration, High Per-Minute Intensity:</strong> The gym session shows elevated metabolic intensity but moderate duration and low oxygen stress. This suggests concentrated effort within a shorter timeframe.</li>
+          <li><strong>Feb 6 &ndash; Highest Per-Minute Intensity, Short Duration:</strong> Because exercise time was short, metabolic intensity appears amplified. The radar profile is vertically stretched but narrow elsewhere. This reveals how brief workouts can distort intensity metrics.</li>
+          <li><strong>Feb 7 &ndash; Sustained Load and Oxygen Demand:</strong> The basketball day forms the largest overall triangle. Although per-minute intensity is lower, long duration and higher oxygen stress indicate sustained cardiovascular strain.</li>
+        </ul>
+        <p><strong>Key Insight:</strong> Gym training represents a peak-intensity model, while basketball reflects a sustained-load model. Oxygen stress scales more strongly with duration than with instantaneous intensity.</p>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- ==================== Final Synthesis ==================== -->
+    <section id="synthesis">
+      <h2>Final Synthesis</h2>
+
+      <div class="synthesis-box">
+        <p>Across the three visualizations, a layered structure emerges:</p>
+        <table>
+          <thead>
+            <tr><th>Layer</th><th>What it Measures</th><th>Insight</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Time (Archipelago)</td><td>Allocation of hours</td><td>Structural balance</td></tr>
+            <tr><td>Cognition (Waveform)</td><td>Attention fluctuation</td><td>Momentum &amp; fragmentation</td></tr>
+            <tr><td>Physiology (Trinity)</td><td>Biological load</td><td>Systemic response</td></tr>
+          </tbody>
+        </table>
+
+        <p>Together, they reveal a coherent pattern:</p>
+        <ul>
+          <li>My time structure is relatively stable.</li>
+          <li>My attention fluctuates depending on context.</li>
+          <li>My physiology responds most strongly to sustained effort rather than brief intensity.</li>
+        </ul>
+        <p>
+          The three visualizations move from <strong>external structure &rarr; internal cognition &rarr; embodied response</strong>, forming a multi-layered portrait of daily life.
+        </p>
+        <p>
+          Compared to the fully manual media used in the first two visualizations, incorporating AI in the third required a higher degree of verification and methodological transparency, reinforcing my awareness of authorship and data integrity.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Lianrui Geng &middot; COMP 617 &middot; Module 1: Data Physicalization</p>
+  </footer>
+
+</body>
+</html>
